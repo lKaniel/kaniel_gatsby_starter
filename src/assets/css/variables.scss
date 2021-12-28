@@ -1,0 +1,17 @@
+$max-width: 1440px;
+$container-width: 90vw;
+
+
+$nav-height: 6rem;
+$footer-height: 4rem;
+$layout-min-height: calc(100vh - #{$nav-height} - #{$footer-height});
+
+$light-color-0: #FFF;
+$light-color: #EEF4D4;
+$dark-color: #1C2826;
+$accent1-color: #DAEFB3;
+$accent2-color: #EA9E8D;
+
+$scrollbar-track: #DEDAE0;
+$scrollbar-track-hover: #85858a;
+$scrollbar-thumb: #525156;

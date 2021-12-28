@@ -1,15 +1,16 @@
-import React from "react"
+import React from 'react';
 import Layout from "../components/Layout/Layout";
 import Seo from "../components/Seo";
 
-export default function Home() {
-
+const error = () => {
     return (
         <Layout>
-            <Seo title={"home"}/>
+            <Seo title={"Error"}/>
             <h2>
-                Hello from Kaniel's starter!
+                ERROR 404
             </h2>
         </Layout>
-    )
-}
+    );
+};
+
+export default error;

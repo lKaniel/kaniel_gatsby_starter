@@ -1,0 +1,31 @@
+@import "../../assets/css/variables";
+
+body {
+  font-family: 'Comfortaa', sans-serif;
+  color: $dark-color;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: normal;
+  scrollbar-color: $scrollbar-thumb $scrollbar-track;
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: $scrollbar-thumb;
+  border-radius: .5rem;
+  border: .2rem solid $scrollbar-track;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: $scrollbar-track-hover;
+}
+
+body::-webkit-scrollbar-track {
+  background: $scrollbar-track;
+}
