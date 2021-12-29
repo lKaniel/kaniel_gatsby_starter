@@ -16,7 +16,10 @@ function setOnline(isOnline) {
     }
 }
 
-function* innitListeners(element) {
+function* setupListeners({listeners, element}) {
+    for (let i = 0; i < listeners.length; i++) {
+        yield createListener(listeners[i], setOnline(true), element)
+    }
     yield createListener("online", setOnline(true), element)
     yield createListener("offline", setOnline(false), element)
 
@@ -24,7 +27,13 @@ function* innitListeners(element) {
 
 function* isOnlineSagaWatcher() {
     const {element} = yield take(START_CHECK_ONLINE)
-    yield call(innitListeners, element)
+    yield call(setupListeners, {
+        element,
+        listeners: [
+            "online",
+            "offline"
+        ]
+    })
 }
 
 export function* appSideSaga() {
