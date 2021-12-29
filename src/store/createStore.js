@@ -2,7 +2,7 @@ import {applyMiddleware, createStore} from 'redux';
 import rootReducer from "./reducers/rootReducer";
 import {composeWithDevTools} from "redux-devtools-extension";
 import createSagaMiddleware from 'redux-saga'
-import {isOnlineSagaWatcher} from "./sagas/appSideSagas";
+import rootSaga from "./sagas/rootSaga";
 
 
 const sagaMiddleware = createSagaMiddleware()
@@ -17,7 +17,7 @@ const createMyStore = preloadedState => {
         applyMiddleware(sagaMiddleware)
     ));
 
-    sagaMiddleware.run(isOnlineSagaWatcher)
+    sagaMiddleware.run(rootSaga)
 
     return store
 };
