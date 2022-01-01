@@ -1,9 +1,9 @@
 import {call, spawn, all} from "redux-saga/effects";
-import {appSideSaga} from "./appSideSaga";
+import {eventListenerSaga} from "./eventListenerSaga";
 
 export default function* rootSaga() {
     const sagas = [
-        appSideSaga
+        eventListenerSaga,
     ]
 
     const retrySagas = yield sagas.map(saga => (
